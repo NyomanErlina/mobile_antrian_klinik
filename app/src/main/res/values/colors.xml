@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorAplikasi">#1C9E89</color>
+    <color name="colorAplikasiMuda">#CAF4D5</color>
+    <color name="colorButtonLogin">#9BFBC1</color>
+    <color name="colorBackgroundAntrian">#DAFECD</color>
+    <color name="colorBackgroundDashboard">#F0FEFA</color>
+    <color name="colorBackgroundHalaman">#5BCDBA</color>
+    <color name="colorBackgroundCircleLogo">#E2FFEA</color>
+    <color name="colorProfile">#8DE3D9</color>
+</resources>

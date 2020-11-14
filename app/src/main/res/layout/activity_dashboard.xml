@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackgroundDashboard"
+    android:theme="@style/Theme.MyApp"
+    tools:context=".DashboardActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/colorAplikasiMuda"
+            android:elevation="4dp"
+            android:theme="@style/Theme.MyApp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="15dp">
+
+                <ImageView
+                    android:id="@+id/logo_klinik"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/logo_klinik"
+                    android:layout_marginEnd="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/nama_klinik"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ranjana_skin_clinic"
+                    android:textSize="22sp"
+                    android:textColor="@color/colorAplikasi"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@id/logo_klinik"
+                    android:layout_centerVertical="true"
+                    />
+
+
+
+
+
+                <ImageView
+                    android:id="@+id/icon_notif"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_notification"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:visibility="visible"
+                    android:background="?android:attr/selectableItemBackground"/>
+
+
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/colorAplikasi"
+            android:paddingLeft="5dp"
+            android:paddingRight="10dp"
+            >
+
+            <ImageView
+                android:id="@+id/gambar_dokter"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/icon_dokter"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentBottom="true"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Halo, Erlina Diana"
+                android:textSize="25sp"
+                android:layout_toEndOf="@id/gambar_dokter"
+                android:layout_marginStart="20dp"
+                android:textAlignment="center"
+                android:layout_centerVertical="true"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                />
+        </RelativeLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/informasi_antrian"
+                android:textSize="16sp"
+                android:textColor="@color/colorAplikasi"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="220dp"
+                android:layout_height="100dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="#B9F6CA"
+                >
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    >
+                    <TableRow>
+                        <ImageView
+                            android:id="@+id/icon_info"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/info"
+                            android:alpha="0.5"
+                            />
+                        <TextView
+                            android:id="@+id/tanggal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="18 Oktober 2020, 11.00"
+                            android:textSize="14sp"
+                            android:textAlignment="center"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_horizontal"
+                            />
+                    </TableRow>
+
+                    <TableRow>
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="1dp">
+
+                        </View>
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="@string/jumlah_sisa_antrian"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:layout_gravity="center_horizontal"
+                            />
+
+                    </TableRow>
+
+                    <TableRow>
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="1dp">
+
+                        </View>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="5"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_horizontal"
+                            />
+
+                    </TableRow>
+
+                </TableLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/colorBackgroundAntrian"
+                android:layout_marginStart="25dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:layout_gravity="center"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/antrian"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="7"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:textSize="24sp"
+                        android:layout_marginTop="10dp"
+
+                        />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/daftar_dokter"
+            android:textSize="16sp"
+            android:textColor="@color/colorAplikasi"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="20dp"
+
+            />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
+            android:background="@drawable/shape_list"
+            android:elevation="6dp"
+            android:padding="10dp"
+            >
+
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/circle_logo"
+                android:src="@drawable/ic_profile"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.4"
+                    android:text="Nama Dokter"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="dr. Sintya Dewi"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+
+
+                    />
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                >
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_daftar_konsul"
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/colorAplikasi"
+                    android:text="Konsultasi"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    app:cornerRadius="10dp"
+                    android:focusable="true"
+
+                    />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
+            android:background="@drawable/shape_list"
+            android:elevation="6dp"
+            android:padding="10dp"
+            >
+
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/circle_logo"
+                android:src="@drawable/ic_profile"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.4"
+                    android:text="Nama Dokter"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="dr. Permata Dwi"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+
+
+                    />
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                >
+
+                <com.google.android.material.button.MaterialButton
+
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/colorAplikasi"
+                    android:text="Konsultasi"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    app:cornerRadius="10dp"
+                    android:focusable="true"
+
+                    />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
+            android:background="@drawable/shape_list"
+            android:elevation="6dp"
+            android:padding="10dp"
+            >
+
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/circle_logo"
+                android:src="@drawable/ic_profile"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.4"
+                    android:text="Nama Dokter"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="dr. Hendrawan "
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+
+
+                    />
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                >
+
+                <com.google.android.material.button.MaterialButton
+
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/colorAplikasi"
+                    android:text="Konsultasi"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    app:cornerRadius="10dp"
+                    android:focusable="true"
+
+                    />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_pasien"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+        app:menu="@menu/bottom_navigation_menu_pasien"
+        android:layout_marginTop="50dp"
+        >
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".notifikasi">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp"
+        android:background="@drawable/background2"
+        tools:ignore="MissingConstraints">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background2"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/notifikasi_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?android:attr/actionBarSize"
+                    android:background="@color/colorBackgroundHalaman"
+                    android:theme="@style/ThemeToolbar">
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="206dp"
+                        android:layout_height="45dp"
+                        android:gravity="center_vertical"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:textColor="#E2FFEA"
+                        android:text="DETAIL NOTIFIKASI" />
+
+                </androidx.appcompat.widget.Toolbar>
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="354dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/background4"
+                    android:padding="10dp">
+
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        app:srcCompat="@drawable/info"
+                        />
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="131dp"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="50dp"
+                        android:gravity="center_vertical"
+                        android:text="dr. Sintya Dewi"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"/>
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="272dp"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="30dp"
+                        android:text="Tanggal Periksa : 12 Januari 2020"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="272dp"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="60dp"
+                        android:text="Atuaran Pemakaian Obat :"
+                        android:textStyle="bold" />
+
+                    <FrameLayout
+                        android:layout_width="245dp"
+                        android:layout_height="82dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="100dp"
+                        android:background="@drawable/kotakinput"
+                        android:padding="10dp">
+
+
+                        <TextView
+                            android:id="@+id/textView18"
+                            android:layout_width="131dp"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center_vertical"
+                            android:text="Obat diminum 3x"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView19"
+                            android:layout_width="272dp"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="30dp"
+                            android:text="sehari sesudah makan" />
+
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/textView20"
+                        android:layout_width="272dp"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="190dp"
+                        android:text="Catatan Tambahan :"
+                        android:textStyle="bold" />
+
+                    <FrameLayout
+                        android:layout_width="245dp"
+                        android:layout_height="82dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="210dp"
+                        android:background="@drawable/kotakinput"
+                        android:padding="10dp">
+
+
+                        <TextView
+                            android:id="@+id/textView22"
+                            android:layout_width="272dp"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Jangan makan seafood" />
+
+
+                    </FrameLayout>
+
+
+                </FrameLayout>
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

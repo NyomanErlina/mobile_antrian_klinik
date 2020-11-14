@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".halamanpendaftaran">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp"
+        tools:ignore="MissingConstraints">
+
+
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/pendaftaran_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?android:attr/actionBarSize"
+                    android:background="@color/colorBackgroundHalaman"
+                    android:theme="@style/ThemeToolbar">
+
+                </androidx.appcompat.widget.Toolbar>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="185dp"
+                    android:background="@drawable/background2">
+
+                    <FrameLayout
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/background3">
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/logo_klinik" />
+                    </FrameLayout>
+
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="87dp"
+                    android:background="@drawable/background2">
+
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="215dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="PENDAFTARAN PASIEN"
+                        android:textAlignment="center"
+                        android:textColor="#E2FFEA"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:padding="5dp"
+                    android:text="DATA DIRI "
+                    android:textAlignment="center"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:padding="5dp"
+                    android:text="No. KTP" />
+
+                <EditText
+                    android:id="@+id/KTP"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/kotakinput"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:padding="5dp"
+                    android:hint="Masukan Nomor KTP" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:padding="5dp"
+                    android:text="No. Kartu Keluarga" />
+
+                <EditText
+                    android:id="@+id/KK"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/kotakinput"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:padding="5dp"
+                    android:hint="Masukkan No. KK" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:padding="5dp"
+                    android:text="Nama Pasien" />
+
+                <EditText
+                    android:id="@+id/namapasien"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/kotakinput"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:padding="5dp"
+                    android:hint="Masukkan Nama Pasien" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:padding="5dp"
+                    android:text="Jenis Kelamin" />
+
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioButton"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20dp"
+                        android:padding="5dp"
+                        android:text="Pria"
+                        android:checked="true"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/radioButton1"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="50dp"
+                        android:padding="5dp"
+                        android:text="Wanita" />
+                </RadioGroup>
+
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:padding="5dp"
+                    android:text="Tanggal Lahir" />
+
+                <EditText
+                    android:id="@+id/pilihtanggal"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/kotakinput"
+                    android:clickable="true"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:hint="Pilih Tanggal"
+                    android:padding="5dp" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:padding="5dp"
+                    android:text="Alamat" />
+
+                <EditText
+                    android:id="@+id/Alamat"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/kotakinput"
+                    android:ems="10"
+                    android:inputType="textMultiLine"
+                    android:padding="5dp"
+                    android:hint="Masukan Alamat" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:padding="5dp"
+                    android:text="Nomor Telepon" />
+
+                <EditText
+                    android:id="@+id/telepon"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/kotakinput"
+                    android:ems="10"
+                    android:inputType="phone"
+                    android:padding="5dp"
+                    android:hint="Masukkan Nomor telepon" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:padding="5dp"
+                    android:text="Riwayat Kesehatan" />
+
+                <EditText
+                    android:id="@+id/riwayat"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/kotakinput"
+                    android:ems="10"
+                    android:inputType="textMultiLine"
+                    android:padding="5dp"
+                    android:hint="Masukkan Riwayat Kesehatan" />
+
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp"
+                    android:text="DATA AKUN "
+                    android:textAlignment="center"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:padding="5dp"
+                    android:text="Email" />
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/kotakinput"
+                    android:ems="10"
+                    android:inputType="textEmailAddress"
+                    android:padding="5dp"
+                    android:hint="Masukkan Email" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:padding="5dp"
+                    android:text="Password" />
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/kotakinput"
+                    android:ems="10"
+                    android:inputType="textPassword"
+                    android:padding="10dp"
+                    android:hint="Masukkan Password" />
+
+
+                <Button
+                    android:id="@+id/btn_daftar_pasien"
+                    android:padding="10dp"
+                    android:layout_margin="30dp"
+                    android:layout_gravity="center"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:background="#3FC3AD"
+
+                    android:textColor="#FFFFFF"
+                    android:text="Daftar" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    app:srcCompat="@drawable/background" />
+
+
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundHalaman"
+    android:theme="@style/Theme.MyApp"
+    tools:context=".PendaftaranKonsultasiActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/konsultasi_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/colorBackgroundHalaman"
+            android:theme="@style/ThemeToolbar">
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+
+        <LinearLayout
+            android:id="@+id/icon_jadwal"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/circle_logo"
+            android:padding="7dp"
+
+            >
+
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/logo_klinik" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            >
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="4dp"
+                android:background="@color/colorBackgroundCircleLogo"
+                android:layout_centerVertical="true"
+                />
+
+            <TextView
+                android:id="@+id/pendaftaran_konsul"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="PENDAFTARAN KONSULTASI"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorBackgroundCircleLogo"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:textAlignment="center"
+                />
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="4dp"
+                android:background="@color/colorBackgroundCircleLogo"
+                android:layout_toRightOf="@id/pendaftaran_konsul"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:background="@drawable/header_form_konsul"
+            android:elevation="6dp"
+            android:padding="10dp"
+            >
+
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/circle_logo"
+                android:src="@drawable/ic_profile"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.4"
+                    android:text="Nama Dokter"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="dr. Sintya Dewi"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_background_konsultasi"
+            android:padding="20dp"
+            >
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MyTextInputLayout2"
+                android:hint="@string/tanggal_konsultasi"
+                app:startIconDrawable="@drawable/ic_jadwal"
+                app:startIconContentDescription="Keluhan"
+                app:errorEnabled="true"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+
+                >
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_tanggal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="false" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MyTextInputLayout2"
+                android:hint="Jam Konsultasi"
+                app:startIconDrawable="@drawable/ic_clock"
+                app:startIconContentDescription="Keluhan"
+                app:errorEnabled="true"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+
+                >
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_jam"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="false" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_keluhan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MyTextInputLayout2"
+                android:hint="Keluhan"
+                app:startIconDrawable="@drawable/ic_note"
+                app:startIconContentDescription="Keluhan"
+                app:errorEnabled="true"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/masukkan_foto_keluhan"
+                android:textSize="14sp"
+                android:layout_marginBottom="10dp"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pilih_foto"
+                android:id="@+id/buttonChoose"
+                android:drawableRight="@android:drawable/ic_menu_gallery"
+                android:layout_marginBottom="15dp"
+                android:textSize="12sp"
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:id="@+id/foto_keluhan"
+
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_submit_konsul"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/colorAplikasi"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="SUBMIT"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                app:cornerRadius="10dp"
+
+                />
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+</ScrollView>

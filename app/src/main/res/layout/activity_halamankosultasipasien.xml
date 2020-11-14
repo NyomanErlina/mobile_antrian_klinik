@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".halamankosultasipasien">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp"
+        tools:ignore="MissingConstraints">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/backgroudwhite"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background2">
+
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/konsultasi_toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?android:attr/actionBarSize"
+                        android:background="@color/colorBackgroundHalaman"
+                        android:theme="@style/ThemeToolbar">
+
+                    </androidx.appcompat.widget.Toolbar>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="68dp"
+                        android:layout_marginTop="60dp">
+
+                        <FrameLayout
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginLeft="20dp"
+                            android:background="@drawable/background3">
+
+                            <ImageView
+                                android:id="@+id/imageView5"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_gravity="center"
+                                app:srcCompat="@drawable/logo_klinik" />
+                        </FrameLayout>
+
+
+                        <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="206dp"
+                            android:layout_height="45dp"
+                            android:layout_marginLeft="100dp"
+                            android:gravity="center_vertical"
+                            android:text="KONSULTASI PASIEN"
+                            android:textColor="#E2FFEA"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/imageView7"
+                            android:layout_width="200dp"
+                            android:layout_height="55dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="98dp"
+                            android:layout_marginTop="5dp"
+                            app:srcCompat="@drawable/line2" />
+
+
+                    </FrameLayout>
+                </FrameLayout>
+
+
+
+                    <RelativeLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/backgroudwhite">
+                        <FrameLayout
+                            android:layout_width="69dp"
+                            android:layout_height="57dp"
+                            android:layout_margin="20dp"
+                            android:id="@+id/frame01"
+                            android:background="@drawable/background4">
+
+
+                            <TextView
+                                android:id="@+id/textView21"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:gravity="center"
+                                android:text="Antrian"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textView22"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="23dp"
+                                android:gravity="center"
+                                android:text="1"
+                                android:textStyle="bold" />
+
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/textView25"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="152dp"
+                            android:layout_marginLeft="152dp"
+                            android:layout_marginTop="20dp"
+                            android:textStyle="bold"
+                            android:layout_toEndOf="@+id/frame01"
+                            android:layout_toRightOf="@+id/frame01"
+                            android:text="(Tanggal Pemeriksaan)" />
+
+
+                    </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/imageView13"
+                    android:layout_width="283dp"
+                    android:layout_height="138dp"
+                    android:layout_gravity="center"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="415dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/background4"
+                    android:padding="10dp">
+
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="131dp"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center_vertical"
+                        android:text="DATA PASIEN"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="391dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView16"
+                                android:layout_width="132dp"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="30dp"
+                                android:text="Tanggal Periksa :"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textView17"
+                                android:layout_width="173dp"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="30dp"
+                                android:text="Ayu Safitri"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView18"
+                                android:layout_width="132dp"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Jenis Kelamin :"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textView19"
+                                android:layout_width="173dp"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Wanita"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView20"
+                                android:layout_width="132dp"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Tanggal Lahir :"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textView31"
+                                android:layout_width="173dp"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:text="20 Januari 1998"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView32"
+                                android:layout_width="132dp"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Alamat :"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textView33"
+                                android:layout_width="173dp"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Jojoran 1 nomor 30, Surabaya"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView24"
+                                android:layout_width="132dp"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Email :"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textView35"
+                                android:layout_width="173dp"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:text="ayupermata02@gmail.com"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView36"
+                                android:layout_width="132dp"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Nomor Telepon :"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textView37"
+                                android:layout_width="173dp"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:text="085723945647"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView38"
+                                android:layout_width="132dp"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Riwayat kesehatan :"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textView39"
+                                android:layout_width="173dp"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Alergi seafood"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView40"
+                                android:layout_width="132dp"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Keluhan :"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textView41"
+                                android:layout_width="173dp"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:text="kulit berjerawat "
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="355dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/background4"
+                    android:padding="10dp">
+
+
+                    <TextView
+                        android:id="@+id/textView42"
+                        android:layout_width="131dp"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center_vertical"
+                        android:text="CATATAN UNTUK PASIEN"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="326dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView43"
+                            android:layout_width="272dp"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="40dp"
+                            android:text="Atuaran Pemakaian Obat :"
+                            android:textStyle="bold" />
+
+                        <FrameLayout
+                            android:layout_width="245dp"
+                            android:layout_height="82dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/kotakinput"
+                            android:padding="10dp">
+
+
+                            <TextView
+                                android:id="@+id/textView44"
+                                android:layout_width="131dp"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="10dp"
+                                android:gravity="center_vertical"
+                                android:text="Obat diminum 3x"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textView45"
+                                android:layout_width="272dp"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="30dp"
+                                android:text="sehari sesudah makan" />
+
+
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/textView46"
+                            android:layout_width="272dp"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Catatan Tambahan :"
+                            android:textStyle="bold" />
+
+                        <FrameLayout
+                            android:layout_width="245dp"
+                            android:layout_height="82dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/kotakinput"
+                            android:padding="10dp">
+
+
+                            <TextView
+                                android:id="@+id/textView47"
+                                android:layout_width="272dp"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Jangan makan seafood" />
+
+
+                        </FrameLayout>
+
+
+                    </LinearLayout>
+
+
+                </FrameLayout>
+
+                <Button
+                    android:id="@+id/btn_selesai_konsul"
+                    android:layout_width="204dp"
+                    android:layout_height="49dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/background2"
+                    android:text="SELESAI KONSULTASI" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp">
+
+                </FrameLayout>
+
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

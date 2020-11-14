@@ -1,0 +1,91 @@
+package com.example.aplikasiantrianklinik;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+public class DashboardDokterActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_dashboard_dokter);
+
+        customToolbar();
+
+        final BottomNavigationView bottomNavigation = findViewById(R.id.bottom_navigation_dokter);
+        bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.home_dokter:
+                        break;
+
+                    case R.id.my_schedule :
+                        Intent jadwalIntent = new Intent(DashboardDokterActivity.this, MyScheduleActivity.class);
+                        startActivity(jadwalIntent);
+                        break;
+                    case R.id.history:
+                        Intent historyIntent = new Intent(DashboardDokterActivity.this, historykonsultasi.class);
+                        startActivity(historyIntent);
+                        break;
+
+
+                }
+                return true;
+            }
+        });
+
+        Button btnKonsul = (Button) findViewById(R.id.btn_konsul);
+        btnKonsul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent konsulIntent = new Intent(DashboardDokterActivity.this, halamankosultasipasien.class);
+                startActivity(konsulIntent);
+            }
+        });
+
+
+    }
+
+
+    private void customToolbar(){
+        //set Toolbar custom
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        //TextView myToolbar_title = (TextView) findViewById(R.id.list_title);
+        setSupportActionBar(myToolbar);
+
+        if (myToolbar != null){
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+            getSupportActionBar().setDisplayShowHomeEnabled(false);
+        }
+
+        // myToolbar_title.setText(R.string.dental_clinic_app);
+
+
+
+        ImageView profile = (ImageView) findViewById(R.id.icon_profile);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent profileIntent = new Intent(DashboardDokterActivity.this, ProfileDokterActivity.class);
+                startActivity(profileIntent);
+
+
+            }
+        });
+
+    }
+}

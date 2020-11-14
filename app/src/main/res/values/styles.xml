@@ -1,0 +1,56 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Theme.MyApp" parent="Theme.MaterialComponents.DayNight">
+        <item name="bottomNavigationStyle">@style/Widget.MaterialComponents.BottomNavigationView.Colored</item>
+        <item name="colorPrimary">@color/colorAplikasi</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+
+        <item name="extendedFloatingActionButtonStyle">@style/Widget.App.ExtendedFloatingActionButton</item>
+    </style>
+
+    <style name="ThemeToolbar" parent="Theme.AppCompat.Light">
+
+        <!-- navigation icon color -->
+        <item name="colorControlNormal">@android:color/white</item>
+
+    </style>
+
+
+    <style name="Widget.MyToolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/colorAplikasiMuda</item>
+
+    </style>
+
+    <style name="Widget.MyTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="hintTextColor">@color/colorAplikasiMuda</item>
+        <item name="placeholderTextColor">@color/colorAplikasiMuda</item>
+        <item name="boxStrokeColor">@color/colorAplikasiMuda</item>
+
+    </style>
+
+    <style name="Widget.MyTextInputLayout2" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="hintTextColor">@color/colorBackgroundHalaman</item>
+        <item name="placeholderTextColor">@color/colorBackgroundHalaman</item>
+        <item name="boxStrokeColor">@color/colorBackgroundHalaman</item>
+        <item name="android:textSize">20sp</item>
+
+    </style>
+
+    <style name="Widget.App.ExtendedFloatingActionButton" parent="Widget.MaterialComponents.ExtendedFloatingActionButton.Icon">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.FloatingActionButton</item>
+    </style>
+
+    <style name="ThemeOverlay.App.FloatingActionButton" parent="">
+        <item name="colorSecondary">@color/colorAplikasiMuda</item>
+        <item name="colorOnSecondary">@color/colorAplikasi</item>
+        <item name="colorOnSurface">@color/colorAplikasi</item>
+    </style>
+
+</resources>
