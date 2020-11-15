@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,12 +19,25 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+
 public class DashboardActivity extends AppCompatActivity {
+
+    private RecyclerView rvDokter;
+    private ArrayList<Dokter> listDokter = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+
+        rvDokter = findViewById(R.id.recyclerView_dokter);
+        //gunakan setHasFixedSize = true agar ukuran recylerview tidak berubah
+        //ketika isi dari recyclerview secara dinamis berubah
+        rvDokter.setHasFixedSize(true);
+
+        listDokter.addAll(DataDokter.getListDataDokter());
+        showRecyclerList();
 
         customToolbar();
 
@@ -90,6 +105,17 @@ public class DashboardActivity extends AppCompatActivity {
 
             }
         });
+
+    }
+
+    private void showRecyclerList(){
+
+        // mengatur layout pada recyclerview
+        rvDokter.setLayoutManager(new LinearLayoutManager(this));
+        //mengirim ArrayList ke recyclerview
+        final ListDokterAdapter listDokterAdapter = new ListDokterAdapter(listDokter);
+        rvDokter.setAdapter(listDokterAdapter);
+
 
     }
 }
