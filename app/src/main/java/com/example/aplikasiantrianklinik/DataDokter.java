@@ -6,11 +6,17 @@ public class DataDokter {
     private static String[] namaDokter = {
             "dr. Sabrina",
             "dr. Devi",
-            "dr. Risky"
+            "dr. Risky",
+            "dr. Sintya",
+            "dr. Ike Dewi",
+            "dr. Surya"
 
     };
 
     private static int[] fotoDokter = {
+            R.drawable.dokter1,
+            R.drawable.dokter2,
+            R.drawable.dokter3,
             R.drawable.dokter1,
             R.drawable.dokter2,
             R.drawable.dokter3

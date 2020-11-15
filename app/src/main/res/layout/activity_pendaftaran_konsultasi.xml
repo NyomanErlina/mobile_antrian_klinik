@@ -115,11 +115,13 @@
                     />
 
                 <TextView
+                    android:id="@+id/dokter_pendaftaran_konsul"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="dr. Sintya Dewi"
+                    tools:text="nama dokter untuk konsultasi"
                     android:textSize="16sp"
                     android:textColor="@android:color/black"
+                    android:textStyle="bold"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp"
                     />

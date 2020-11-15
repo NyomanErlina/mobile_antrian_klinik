@@ -37,5 +37,6 @@
     <string name="pilih_foto">Pilih Foto</string>
     <string name="my_profile">MY PROFILE</string>
     <string name="dokter_spesialis_kulit">Dokter Spesialis Kulit</string>
+    <string name="jadwal_konsultasi_anda">Jadwal Konsultasi Anda</string>
 
 </resources>

@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
@@ -29,6 +30,10 @@ public class PendaftaranKonsultasiActivity extends AppCompatActivity {
     private TimePickerDialog timePickerDialog;
     private EditText inputJam;
 
+    public static final String EXTRA_NAMA_DOKTER = "extra_nama_dokter";
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +41,11 @@ public class PendaftaranKonsultasiActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pendaftaran_konsultasi);
 
         setToolbarCustom();
+
+        TextView tvNamaDokter = findViewById(R.id.dokter_pendaftaran_konsul);
+        String namaDokter = getIntent().getStringExtra(EXTRA_NAMA_DOKTER);
+
+        tvNamaDokter.setText(namaDokter);
 
         // object dateFormatter
         dateFormatter = new SimpleDateFormat("dd/MM/yyyy", Locale.US);

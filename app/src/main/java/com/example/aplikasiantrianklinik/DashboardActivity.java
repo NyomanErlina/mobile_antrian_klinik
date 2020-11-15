@@ -67,6 +67,7 @@ public class DashboardActivity extends AppCompatActivity {
                 }
             });
 
+/*
             Button btnKonsul = (Button) findViewById(R.id.btn_daftar_konsul);
             btnKonsul.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -76,7 +77,7 @@ public class DashboardActivity extends AppCompatActivity {
                 }
             });
 
-
+*/
     }
 
 
@@ -115,6 +116,22 @@ public class DashboardActivity extends AppCompatActivity {
         //mengirim ArrayList ke recyclerview
         final ListDokterAdapter listDokterAdapter = new ListDokterAdapter(listDokter);
         rvDokter.setAdapter(listDokterAdapter);
+
+        listDokterAdapter.setOnItemClickCallback(new ListDokterAdapter.OnItemClickCallback() {
+            @Override
+            public void onItemClicked(Dokter data) {
+                Intent konsulIntent = new Intent(DashboardActivity.this, PendaftaranKonsultasiActivity.class);
+                konsulIntent.putExtra(PendaftaranKonsultasiActivity.EXTRA_NAMA_DOKTER, data.getNama());
+                startActivity(konsulIntent);
+                /*
+                Intent moveWithDataIntent = new Intent(MainActivity.this, MoveWithDataActivity.class);
+                moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_NAME, "DicodingAcademy Boy");
+                moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_AGE, 5);
+                startActivity(moveWithDataIntent);
+
+                 */
+            }
+        });
 
 
     }
