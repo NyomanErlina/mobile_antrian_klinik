@@ -41,11 +41,15 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.0.0'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
 
-
-    implementation 'com.google.android.material:material:1.0.0'
+    //collapse toolbar
+    implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.palette:palette:1.0.0'
+
+    //navigation view
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
 
     //punya robin

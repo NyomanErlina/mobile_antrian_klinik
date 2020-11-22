@@ -1,8 +1,10 @@
 package com.example.aplikasiantrianklinik;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -18,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
@@ -25,6 +28,10 @@ public class DashboardActivity extends AppCompatActivity {
 
     private RecyclerView rvDokter;
     private ArrayList<Dokter> listDokter = new ArrayList<>();
+
+    private Toolbar toolbar;
+    private NavigationView navigationView;
+    private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +48,8 @@ public class DashboardActivity extends AppCompatActivity {
 
         customToolbar();
 
+        navigationView();
+
 
             BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation_pasien);
             bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -56,9 +65,9 @@ public class DashboardActivity extends AppCompatActivity {
 
 
                             break;
-                        case R.id.action_profile :
-                            Intent profileIntent = new Intent(DashboardActivity.this, ProfileActivity.class);
-                            startActivity(profileIntent);
+                        case R.id.action_notifikasi :
+                            Intent notifIntent = new Intent(DashboardActivity.this, notifikasi.class);
+                            startActivity(notifIntent);
 
                             break;
                     }
@@ -67,17 +76,6 @@ public class DashboardActivity extends AppCompatActivity {
                 }
             });
 
-/*
-            Button btnKonsul = (Button) findViewById(R.id.btn_daftar_konsul);
-            btnKonsul.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent konsulIntent = new Intent(DashboardActivity.this, PendaftaranKonsultasiActivity.class);
-                    startActivity(konsulIntent);
-                }
-            });
-
-*/
     }
 
 
@@ -96,7 +94,7 @@ public class DashboardActivity extends AppCompatActivity {
         //TextView myToolbar_title = (TextView) findViewById(R.id.list_title);
        // myToolbar_title.setText(R.string.dental_clinic_app);
 
-
+    /*
         ImageView notification = (ImageView) findViewById(R.id.icon_notif);
         notification.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,6 +105,8 @@ public class DashboardActivity extends AppCompatActivity {
 
             }
         });
+
+     */
 
     }
 
@@ -135,5 +135,60 @@ public class DashboardActivity extends AppCompatActivity {
         });
 
 
+    }
+
+
+
+    private void navigationView(){
+        // Menginisiasi  NavigationView
+        navigationView = (NavigationView) findViewById(R.id.navigation_view);
+
+        //Mengatur Navigasi View Item yang akan dipanggil untuk menangani item klik menu navigasi
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            // This method will trigger on item Click of navigation menu
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+                //Memeriksa apakah item tersebut dalam keadaan dicek  atau tidak,
+                if(menuItem.isChecked())
+                    menuItem.setChecked(false);
+                else menuItem.setChecked(true);
+                    //Menutup  drawer item klik
+                    drawerLayout.closeDrawers();
+
+                //Memeriksa untuk melihat item yang akan dilklik dan melalukan aksi
+                switch (menuItem.getItemId()){
+                    // pilihan menu item navigasi akan menampilkan pesan toast klik kalian bisa menggantinya
+                    //dengan intent activity
+                    case R.id.navigasi_profile:
+                        Intent profileIntent = new Intent(DashboardActivity.this, ProfileActivity.class);
+                        startActivity(profileIntent);
+                    case R.id.navigasi_setting:
+                        Toast.makeText(getApplicationContext(),"Setting Telah Dipilih",Toast.LENGTH_SHORT).show();
+                        return true;
+                    default:
+                        Toast.makeText(getApplicationContext(),"Kesalahan Terjadi ",Toast.LENGTH_SHORT).show();
+                        return true;
+                }
+            }
+        });
+
+        // Menginisasi Drawer Layout dan ActionBarToggle
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.openDrawer, R.string.closeDrawer){
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                // Kode di sini akan merespons setelah drawer menutup disini kita biarkan kosong
+                super.onDrawerClosed(drawerView);
+            }
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                //  Kode di sini akan merespons setelah drawer terbuka disini kita biarkan kosong
+                super.onDrawerOpened(drawerView);
+            }
+        };
+        //Mensetting actionbarToggle untuk drawer layout
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        //memanggil synstate
+        actionBarDrawerToggle.syncState();
     }
 }

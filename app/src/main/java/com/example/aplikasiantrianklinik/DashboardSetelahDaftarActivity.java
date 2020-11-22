@@ -36,9 +36,9 @@ public class DashboardSetelahDaftarActivity extends AppCompatActivity {
 
 
                         break;
-                    case R.id.action_profile :
-                        Intent profileIntent = new Intent(DashboardSetelahDaftarActivity.this, ProfileActivity.class);
-                        startActivity(profileIntent);
+                    case R.id.action_notifikasi:
+                        Intent notifIntent = new Intent(DashboardSetelahDaftarActivity.this, notifikasi.class);
+                        startActivity(notifIntent);
 
                         break;
                 }
@@ -74,15 +74,6 @@ public class DashboardSetelahDaftarActivity extends AppCompatActivity {
         // myToolbar_title.setText(R.string.dental_clinic_app);
 
 
-        ImageView notification = (ImageView) findViewById(R.id.icon_notif);
-        notification.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-
-            }
-        });
 
     }
 

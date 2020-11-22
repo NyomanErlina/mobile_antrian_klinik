@@ -38,5 +38,8 @@
     <string name="my_profile">MY PROFILE</string>
     <string name="dokter_spesialis_kulit">Dokter Spesialis Kulit</string>
     <string name="jadwal_konsultasi_anda">Jadwal Konsultasi Anda</string>
+    <string name="openDrawer">Drawer dibuka</string>
+    <string name="closeDrawer">Drawer ditutup</string>
+    <string name="notifikasi">Notifikasi</string>
 
 </resources>
