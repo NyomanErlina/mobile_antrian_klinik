@@ -42,6 +42,11 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.9.0'
 
 
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.palette:palette:1.0.0'
+
 
     //punya robin
     implementation 'androidx.appcompat:appcompat:1.2.0'
