@@ -50,7 +50,7 @@ public class ListDokterAdapter extends RecyclerView.Adapter<ListDokterAdapter.Li
 
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
-            //imgFoto = itemView.findViewById(R.id.item_foto_dokter);
+            imgFoto = itemView.findViewById(R.id.item_foto_dokter);
             tvNama = itemView.findViewById(R.id.item_nama_dokter);
             btnKonsul = itemView.findViewById(R.id.btn_daftar_konsul);
 

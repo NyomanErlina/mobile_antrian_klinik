@@ -108,46 +108,57 @@ public class DashboardActivity extends AppCompatActivity {
         rvDokter.setHasFixedSize(true);
 
         database = new DataHelper(this);
+
+        // get image from drawable
+        Bitmap image1 = BitmapFactory.decodeResource(getResources(),
+                R.drawable.dokter1);
+        // convert bitmap to byte
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        image1.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+        byte[] imageInByte1 = stream.toByteArray();
+
+        // get image from drawable
+        Bitmap image2 = BitmapFactory.decodeResource(getResources(),
+                R.drawable.dokter2);
+        // convert bitmap to byte
+        ByteArrayOutputStream stream2 = new ByteArrayOutputStream();
+        image2.compress(Bitmap.CompressFormat.JPEG, 100, stream2);
+        byte[] imageInByte2 = stream.toByteArray();
+
+        // get image from drawable
+        Bitmap image3 = BitmapFactory.decodeResource(getResources(),
+                R.drawable.dokter3);
+        // convert bitmap to byte
+        ByteArrayOutputStream stream3 = new ByteArrayOutputStream();
+        image3.compress(Bitmap.CompressFormat.JPEG, 100, stream3);
+        byte[] imageInByte3 = stream.toByteArray();
+
+        // Inserting Dokter
+        Log.d("Insert: ", "Inserting ..");
+        database.addDokter(new Dokter("1", "dr. Sabrina Permata", "sabrina@gmail.com", "08752635263",
+                982187287, "Jalan Mawar 89", "RSUD Soebandi", imageInByte1  ));
+        database.addDokter(new Dokter("2", "dr. Sintya Dewi", "sintyaa@gmail.com", "085652135263",
+                1232187287, "Jalan Melati 12", "RSUD Soebandi", imageInByte2  ));
+        database.addDokter(new Dokter("3", "dr. Risky Zuliansyah", "riskyy@gmail.com", "081452135263",
+                1092187287, "Mangli Indah No 19", "RSUD Soetomo", imageInByte3  ));
+
+        // display main List view dokter and reading all dokter from database
+        ArrayList<Dokter> dokters = database.listDokter();
+        for (Dokter d : dokters) {
+            String log = "ID Dokter :" + d.getId() + " Nama Dokter: " + d.getNama()
+                    + " ,Image: " + d.getFoto();
+
+            Log.d("Result: ", log);
+
+            //add data dokter in arrayList
+            listDokter.add(d);
+        }
+
         listDokter = database.listDokter();
+
 
         if(listDokter.size() > 0){
             //rvDokter.setVisibility(View.VISIBLE);
-
-            // get image from drawable
-            Bitmap image1 = BitmapFactory.decodeResource(getResources(),
-                    R.drawable.dokter1);
-            // convert bitmap to byte
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            image1.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-            byte[] imageInByte1 = stream.toByteArray();
-
-            // get image from drawable
-            Bitmap image2 = BitmapFactory.decodeResource(getResources(),
-                    R.drawable.dokter2);
-            // convert bitmap to byte
-            ByteArrayOutputStream stream2 = new ByteArrayOutputStream();
-            image2.compress(Bitmap.CompressFormat.JPEG, 100, stream2);
-            byte[] imageInByte2 = stream.toByteArray();
-
-            // Inserting Dokter
-            Log.d("Insert: ", "Inserting ..");
-            database.addDokter(new Dokter("1", "dr. Sabrina Permata", "sabrina@gmail.com", "08752635263",
-                    982187287, "Jalan Mawar 89", "RSUD Soebandi", imageInByte1  ));
-            database.addDokter(new Dokter("2", "dr. Sintya Dewi", "sintyaa@gmail.com", "085652135263",
-                    1232187287, "Jalan Melati 12", "RSUD Soebandi", imageInByte2  ));
-
-            // display main List view dokter and reading all dokter from database
-            ArrayList<Dokter> dokters = database.listDokter();
-            for (Dokter d : dokters) {
-                String log = "ID Dokter :" + d.getId() + " Nama Dokter: " + d.getNama()
-                        + " ,Image: " + d.getFoto();
-
-                Log.d("Result: ", log);
-
-                //add data dokter in arrayList
-                listDokter.add(d);
-            }
-
 
             dokterAdapter = new ListDokterAdapter(this, listDokter);
             rvDokter.setAdapter(dokterAdapter);
@@ -164,7 +175,7 @@ public class DashboardActivity extends AppCompatActivity {
 
         }else {
             //rvDokter.setVisibility(View.GONE);
-            Toast.makeText(this, "There is no dokter in the database. Start adding now", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Data Dokter tidak ada di database", Toast.LENGTH_LONG).show();
         }
 
     }
