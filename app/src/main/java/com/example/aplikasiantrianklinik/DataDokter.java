@@ -25,10 +25,10 @@ public class DataDokter {
     public static ArrayList<Dokter> getListDataDokter(){
         ArrayList<Dokter> list = new ArrayList<>();
         for (int position = 0; position < namaDokter.length; position++){
-            Dokter dokter = new Dokter();
-            dokter.setNama(namaDokter[position]);
-            dokter.setFoto(fotoDokter[position]);
-            list.add(dokter);
+           // Dokter dokter = new Dokter();
+           // dokter.setNama(namaDokter[position]);
+            //dokter.setFoto(fotoDokter[position]);
+            //list.add(dokter);
         }
         return list;
     }

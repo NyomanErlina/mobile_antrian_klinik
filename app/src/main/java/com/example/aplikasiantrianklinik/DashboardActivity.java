@@ -11,7 +11,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -22,28 +26,27 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class DashboardActivity extends AppCompatActivity {
 
-    private RecyclerView rvDokter;
-    private ArrayList<Dokter> listDokter = new ArrayList<>();
-
     private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
+
+    private DataHelper database;
+    private ArrayList<Dokter> listDokter = new ArrayList<>();
+    private ListDokterAdapter dokterAdapter;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        rvDokter = findViewById(R.id.recyclerView_dokter);
-        //gunakan setHasFixedSize = true agar ukuran recylerview tidak berubah
-        //ketika isi dari recyclerview secara dinamis berubah
-        rvDokter.setHasFixedSize(true);
 
-        listDokter.addAll(DataDokter.getListDataDokter());
         showRecyclerList();
 
         customToolbar();
@@ -91,49 +94,78 @@ public class DashboardActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(false);
         }
 
-        //TextView myToolbar_title = (TextView) findViewById(R.id.list_title);
-       // myToolbar_title.setText(R.string.dental_clinic_app);
-
-    /*
-        ImageView notification = (ImageView) findViewById(R.id.icon_notif);
-        notification.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent notifIntent = new Intent(DashboardActivity.this, notifikasi.class);
-                startActivity(notifIntent);
 
 
-            }
-        });
-
-     */
 
     }
 
     private void showRecyclerList(){
+        RecyclerView rvDokter = (RecyclerView) findViewById(R.id.recyclerView_dokter);
+        //mengatur layout pada recyclerview
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        rvDokter.setLayoutManager(linearLayoutManager);
+        //gunakan setHasFixedSize = true agar ukuran recylerview tidak berubah ketika isi recyclerview secara dinamis berubah
+        rvDokter.setHasFixedSize(true);
 
-        // mengatur layout pada recyclerview
-        rvDokter.setLayoutManager(new LinearLayoutManager(this));
-        //mengirim ArrayList ke recyclerview
-        final ListDokterAdapter listDokterAdapter = new ListDokterAdapter(listDokter);
-        rvDokter.setAdapter(listDokterAdapter);
+        database = new DataHelper(this);
+        listDokter = database.listDokter();
 
-        listDokterAdapter.setOnItemClickCallback(new ListDokterAdapter.OnItemClickCallback() {
-            @Override
-            public void onItemClicked(Dokter data) {
-                Intent konsulIntent = new Intent(DashboardActivity.this, PendaftaranKonsultasiActivity.class);
-                konsulIntent.putExtra(PendaftaranKonsultasiActivity.EXTRA_NAMA_DOKTER, data.getNama());
-                startActivity(konsulIntent);
-                /*
-                Intent moveWithDataIntent = new Intent(MainActivity.this, MoveWithDataActivity.class);
-                moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_NAME, "DicodingAcademy Boy");
-                moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_AGE, 5);
-                startActivity(moveWithDataIntent);
+        if(listDokter.size() > 0){
+            //rvDokter.setVisibility(View.VISIBLE);
 
-                 */
+            // get image from drawable
+            Bitmap image1 = BitmapFactory.decodeResource(getResources(),
+                    R.drawable.dokter1);
+            // convert bitmap to byte
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            image1.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+            byte[] imageInByte1 = stream.toByteArray();
+
+            // get image from drawable
+            Bitmap image2 = BitmapFactory.decodeResource(getResources(),
+                    R.drawable.dokter2);
+            // convert bitmap to byte
+            ByteArrayOutputStream stream2 = new ByteArrayOutputStream();
+            image2.compress(Bitmap.CompressFormat.JPEG, 100, stream2);
+            byte[] imageInByte2 = stream.toByteArray();
+
+            // Inserting Dokter
+            Log.d("Insert: ", "Inserting ..");
+            database.addDokter(new Dokter("1", "dr. Sabrina Permata", "sabrina@gmail.com", "08752635263",
+                    982187287, "Jalan Mawar 89", "RSUD Soebandi", imageInByte1  ));
+            database.addDokter(new Dokter("2", "dr. Sintya Dewi", "sintyaa@gmail.com", "085652135263",
+                    1232187287, "Jalan Melati 12", "RSUD Soebandi", imageInByte2  ));
+
+            // display main List view dokter and reading all dokter from database
+            ArrayList<Dokter> dokters = database.listDokter();
+            for (Dokter d : dokters) {
+                String log = "ID Dokter :" + d.getId() + " Nama Dokter: " + d.getNama()
+                        + " ,Image: " + d.getFoto();
+
+                Log.d("Result: ", log);
+
+                //add data dokter in arrayList
+                listDokter.add(d);
             }
-        });
 
+
+            dokterAdapter = new ListDokterAdapter(this, listDokter);
+            rvDokter.setAdapter(dokterAdapter);
+
+            dokterAdapter.setOnItemClickCallback(new ListDokterAdapter.OnItemClickCallback() {
+                @Override
+                public void onItemClicked(Dokter data) {
+                    Intent konsulIntent = new Intent(DashboardActivity.this, PendaftaranKonsultasiActivity.class);
+                    konsulIntent.putExtra(PendaftaranKonsultasiActivity.EXTRA_NAMA_DOKTER, data.getNama());
+                    startActivity(konsulIntent);
+
+                }
+            });
+
+        }else {
+            //rvDokter.setVisibility(View.GONE);
+            Toast.makeText(this, "There is no dokter in the database. Start adding now", Toast.LENGTH_LONG).show();
+        }
 
     }
 
